@@ -3,6 +3,8 @@
 	"displayName": "webview-umi",
 	"description": "webview umi vscode extension demo",
 	"version": "0.0.1",
+	"private": "true",
+	"workspaces": ["web-for-webview-umi"],
 	"engines": {
 		"vscode": "^1.58.0"
 	},

@@ -1,4 +1,7 @@
 {
+  "name": "web-for-webview-umi",
+  "version": "0.0.0",
+  "description": "web for webview-umi",
   "private": true,
   "scripts": {
     "start": "umi dev",
