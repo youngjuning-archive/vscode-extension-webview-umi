@@ -1,4 +1,4 @@
-import { defineConfig } from 'umi';
+import { defineConfig, IConfig } from 'umi';
 
 export default defineConfig({
   nodeModulesTransform: {
@@ -8,4 +8,5 @@ export default defineConfig({
     { path: '/', component: '@/pages/index' },
   ],
   fastRefresh: {},
-});
+  mfsu: {}
+} as IConfig);
