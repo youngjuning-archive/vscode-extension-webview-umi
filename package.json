@@ -4,7 +4,9 @@
 	"description": "webview umi vscode extension demo",
 	"version": "0.0.1",
 	"private": "true",
-	"workspaces": ["web"],
+	"workspaces": [
+		"web"
+	],
 	"engines": {
 		"vscode": "^1.58.0"
 	},
@@ -24,10 +26,12 @@
 		]
 	},
 	"scripts": {
-		"vscode:prepublish": "yarn run compile",
+		"vscode:prepublish": "rimraf out web/dist && yarn build:web && yarn compile",
+		"build:web": "yarn workspace web run build",
+    "watch:web": "yarn workspace web run start",
 		"compile": "tsc -p ./",
 		"watch": "tsc -watch -p ./",
-		"pretest": "yarn run compile && yarn run lint",
+		"pretest": "yarn compile && yarn lint",
 		"lint": "eslint src --ext ts",
 		"test": "node ./out/test/runTest.js"
 	},
@@ -41,6 +45,7 @@
 		"eslint": "^7.19.0",
 		"glob": "^7.1.6",
 		"mocha": "^8.2.1",
+		"rimraf": "^3.0.2",
 		"typescript": "^4.1.3",
 		"vscode-test": "^1.5.0"
 	}
