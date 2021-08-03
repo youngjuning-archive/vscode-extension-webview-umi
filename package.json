@@ -14,26 +14,32 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:webview-umi.helloWorld"
+		"onCommand:webview-umi.projectManager.start"
 	],
 	"main": "./out/extension.js",
+	"publisher": "youngjuning",
 	"contributes": {
 		"commands": [
 			{
-				"command": "webview-umi.helloWorld",
-				"title": "Hello World"
+				"command": "webview-umi.projectManager.start",
+				"title": "webview-umi:项目管理"
 			}
 		]
 	},
 	"scripts": {
-		"vscode:prepublish": "rimraf out web/dist && yarn build:web && yarn compile",
+		"vscode:prepublish": "yarn build:web && yarn compile",
 		"build:web": "yarn workspace web run build",
     "watch:web": "yarn workspace web run start",
+		"precompile": "rimraf out",
+		"prewatch": "rimraf out",
 		"compile": "tsc -p ./",
 		"watch": "tsc -watch -p ./",
 		"pretest": "yarn compile && yarn lint",
 		"lint": "eslint src --ext ts",
 		"test": "node ./out/test/runTest.js"
+	},
+	"repository": {
+		"url": "https://github.com/youngjuning/vscode-extension-webview-umi"
 	},
 	"devDependencies": {
 		"@types/glob": "^7.1.3",

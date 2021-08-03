@@ -8,5 +8,10 @@ export default defineConfig({
     { path: '/', component: '@/pages/index' },
   ],
   fastRefresh: {},
-  mfsu: {}
+  history: {
+    type: 'memory',
+  },
+  devServer: {
+    writeToDisk: filePath => ['umi.js', 'umi.css'].some(name => filePath.endsWith(name)),
+  },
 } as IConfig);
