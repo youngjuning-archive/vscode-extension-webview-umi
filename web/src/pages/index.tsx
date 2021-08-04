@@ -1,13 +1,13 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import styles from './index.less';
 
 const cats = {
   'Coding Cat': 'https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif',
-  'Compiling Cat': 'https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif'
+  'Compiling Cat': 'https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif',
 };
 
-const IndexPage = () =>{
-  let [count, setCount] = useState(0);
+const IndexPage = () => {
+  const [count, setCount] = useState(0);
   useEffect(() => {
     const id = setInterval(() => {
       setCount(v => {
@@ -20,7 +20,7 @@ const IndexPage = () =>{
   return (
     <div>
       <h1 className={styles.title}>Page index {count}</h1>
-      <img src={cats[cat]} width="300" />
+      <img src={cats[cat]} width="300" alt="cat" />
     </div>
   );
 };
